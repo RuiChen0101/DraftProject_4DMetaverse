@@ -1,0 +1,89 @@
+@import 'colors';
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Noto Sans TC', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    --toastify-color-success: $primary-color;
+    --toastify-color-error: $error-color;
+    background-color: $default-background-color  !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0px !important;
+}
+
+.row {
+    margin: 0px !important;
+    padding: 0px !important;
+}
+
+pre {
+    margin: 0px !important;
+}
+
+.btn-primary {
+    background-color: $primary-color  !important;
+    border-color: $primary-color  !important;
+
+    &:hover {
+        background-color: $primary-color-light  !important;
+        border-color: $primary-color-light  !important;
+    }
+}
+
+.btn-link {
+    color: $primary-color  !important;
+
+    &:hover {
+        color: $primary-color-light  !important;
+    }
+}
+
+.spinner-border.text-primary {
+    color: $primary-color  !important;
+}
+
+.nav-tabs {
+    padding: 0px 12px !important;
+    border-bottom: 1px solid $black-30  !important;
+
+    .nav-link {
+        color: $black-70;
+
+        &:hover {
+            border-color: transparent !important;
+            color: $primary-color-dark;
+        }
+
+        &.active {
+            color: $primary-color-dark  !important;
+            background-color: transparent !important;
+            border-color: transparent !important;
+            margin-bottom: -2px;
+            border-bottom: 2px solid $primary-color-dark  !important;
+        }
+    }
+}
+
+.flex-fill-equal {
+    flex: 1 1 0px;
+}
+
+::-webkit-scrollbar {
+    height: 6px;
+    width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: $secondary-color;
+}

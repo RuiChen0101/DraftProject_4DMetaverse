@@ -1,0 +1,36 @@
+@import '../../colors';
+
+.collection-pool-basic-info {
+    .collection-pool-ui-preview {
+        .collection-pool-ui-preview-example {
+            width: 100%;
+            padding: 8px 16px;
+            text-align: left;
+            border-radius: 10px;
+            border: 1px solid $black-50;
+
+            h6 {
+                margin-bottom: 1rem !important;
+            }
+        }
+
+        .collection-pool-preview {
+            width: 150px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 5px 3px $black-10;
+            background-color: #ffffff;
+
+            img {
+                width: 150px;
+                height: 150px;
+                object-fit: cover;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+            }
+
+            .collection-pool-preview-body {
+                padding: 8px 8px;
+            }
+        }
+    }
+}

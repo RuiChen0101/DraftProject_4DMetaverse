@@ -1,0 +1,11 @@
+@import '../../../colors';
+
+.user-name-cell {
+    display: inline-block;
+
+    .id {
+        font-family: monospace;
+        font-size: 12px;
+        color: $black-50;
+    }
+}

@@ -1,0 +1,18 @@
+@import '../../../colors';
+
+.user-status-cell {
+    padding: 4px 8px;
+    border-radius: 50px;
+
+    &.active {
+        background-color: $primary-color-light;
+    }
+
+    &.block {
+        background-color: #F15E4A80;
+    }
+
+    &.deleted {
+        background-color: $black-30;
+    }
+}

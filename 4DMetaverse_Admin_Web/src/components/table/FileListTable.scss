@@ -1,0 +1,38 @@
+@import '../../colors';
+
+.file-list-table {
+    width: 100%;
+    overflow-x: auto;
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+
+        th {
+            padding: 12px;
+            white-space: nowrap;
+        }
+
+        tbody {
+            tr {
+                &:hover {
+                    background-color: $black-10;
+                }
+
+                td {
+                    border-top: 1px solid $border-color;
+                    padding: 12px;
+                    white-space: nowrap;
+                    color: $black-70;
+
+                    &.file-list-table-file-row-mime-type {
+                        max-width: 200px;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                    }
+                }
+            }
+        }
+    }
+}

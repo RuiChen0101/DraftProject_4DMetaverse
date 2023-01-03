@@ -1,0 +1,55 @@
+@import '../../colors';
+
+.two-factor-verify-main {
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+
+    .header {
+        position: fixed;
+        top: 0;
+        display: flex;
+        width: 100vw;
+        background-color: $default-background-color;
+        padding: 8px;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        border-bottom: 1px solid $border-color;
+
+        span {
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        img {
+            margin-right: 8px;
+            height: 32px;
+        }
+    }
+
+    .verify {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+
+        .verify-form {
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            border: 2px solid $primary-color;
+            border-radius: 10px;
+            padding: 32px;
+        }
+
+        .error {
+            text-align: left;
+            color: $error-color;
+        }
+    }
+
+}

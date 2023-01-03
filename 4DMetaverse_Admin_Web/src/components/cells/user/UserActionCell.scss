@@ -1,0 +1,15 @@
+@import '../../../colors';
+
+.user-action-cell {
+    .btn {
+        color: $black-50;
+
+        &:hover {
+            color: $black-70;
+        }
+    }
+
+    .dropdown-item {
+        color: $black-70;
+    }
+}

@@ -1,0 +1,45 @@
+@import '../../../colors';
+
+.collection-pool-grid-cell {
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px 3px $black-10;
+    background-color: #ffffff;
+
+    &:hover {
+        cursor: pointer;
+        background-color: #00000008;
+    }
+
+    img {
+        width: 100%;
+        max-height: 130px;
+        object-fit: cover;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    .collection-pool-grid-cell-body {
+        text-align: start;
+        padding: 16px 12px;
+
+        h4 {
+            max-width: 80%;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        .collection-pool-id {
+            color: $black-50;
+        }
+
+        .collection-pool-grid-cell-data {
+            color: $black-70;
+            font-size: 14px;
+
+            svg {
+                color: $black-50;
+            }
+        }
+    }
+}

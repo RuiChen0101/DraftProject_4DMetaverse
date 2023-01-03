@@ -1,0 +1,23 @@
+@import '../../colors';
+
+.title-card {
+    background-color: #fff;
+    border-radius: 10px;
+
+    .title-card-header {
+        padding: 12px 20px;
+        text-align: left;
+        background-color: $primary-color;
+        color: #fff;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    .title-card-body {
+        padding: 12px 20px;
+
+        &.fluid {
+            padding: 0px;
+        }
+    }
+}

@@ -1,0 +1,58 @@
+@import '../../colors';
+
+.collection-basic-info {
+
+    .collection-ui-preview {
+        .collection-ui-preview-example {
+            width: 100%;
+            padding: 8px 16px;
+            text-align: left;
+            border-radius: 10px;
+            border: 1px solid $black-50;
+
+            h6 {
+                margin-bottom: 1rem !important;
+            }
+        }
+
+        .collection-purchase-preview {
+            display: flex;
+            align-items: center;
+
+            img {
+                margin-right: .5rem;
+                height: 48px;
+                width: 48px;
+                object-fit: cover;
+                border-radius: 10px;
+            }
+
+            .collection-purchase-preview-name {
+                margin-right: .5rem;
+            }
+
+            .collection-purchase-preview-quant {
+                color: $black-70
+            }
+        }
+
+        .collection-unlocked-preview {
+            width: 150px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 5px 3px $black-10;
+            background-color: #ffffff;
+
+            img {
+                width: 150px;
+                height: 150px;
+                object-fit: cover;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+            }
+
+            .collection-unlocked-preview-body {
+                padding: 8px 8px;
+            }
+        }
+    }
+}

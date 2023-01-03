@@ -1,0 +1,14 @@
+@import '../../../colors';
+
+.directory-name-cell {
+    color: $black-50;
+
+    span {
+        color: #000000;
+
+        &:hover {
+            cursor: pointer;
+            text-decoration: underline;
+        }
+    }
+}

@@ -1,0 +1,46 @@
+@import '../../colors';
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    width: 14rem;
+    min-width: 14rem;
+    max-height: 100vh;
+    background-color: $primary-color-dark;
+
+    .title {
+        display: flex;
+        padding: 8px;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        border-bottom: 1px solid $secondary-color;
+
+        span {
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        img {
+            margin-right: 8px;
+            height: 28px;
+        }
+    }
+
+    .nav {
+        flex: 1;
+        overflow-y: auto;
+    }
+
+    .user {
+        margin-bottom: 8px;
+        border-top: 1px solid $secondary-color;
+
+        .dropdown-toggle {
+            width: 100%;
+            background-color: transparent !important;
+            border: none;
+        }
+    }
+}

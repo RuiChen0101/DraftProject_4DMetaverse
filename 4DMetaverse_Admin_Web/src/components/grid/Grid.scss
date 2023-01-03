@@ -1,0 +1,26 @@
+@import '../../colors';
+
+.grid-main {
+    width: 100%;
+
+    .grid {
+        display: grid;
+        gap: 20px 20px;
+    }
+
+    .grid-pagination {
+        display: flex;
+        justify-content: center;
+        color: $black-70;
+
+        .page-button {
+            padding: 0px;
+            color: $black-70;
+            text-decoration: none;
+
+            &:hover {
+                color: $primary-color-dark;
+            }
+        }
+    }
+}

@@ -1,0 +1,428 @@
+{
+	"info": {
+		"_postman_id": "1dfcb69e-25d5-4a8f-abff-660295f2cae0",
+		"name": "4DMetaverse",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10587418"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "AuthLogin",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "testpwd",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "test@email.com",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base}}/auth/login",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AuthRefresh",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{refreshToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base}}/auth/refresh",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"auth",
+								"refresh"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AuthLogout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base}}/auth/logout",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Auth2FAVerify",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InE5bnMtZW53ci04bXh0LWx1bXUiLCJuYW1lIjoibmFtZSIsInR5cGUiOjEsImFsbG93IjpbIkdFVDovYXV0aC8yZmFfdmVyaWZ5IiwiR0VUOi92ZXJpZnlzbXMvc2VuZD9waG9uZT0wOTEyMzQ1Njc4Il0sInJvbGUiOjEsImZsYWciOjEsInN0YXR1cyI6MSwibm9uY2UiOiJTM3FEQmszQ3hyVEt1eDhtRmR6M0tpTnQiLCJpYXQiOjE2NTYwNTQ5NjUsImV4cCI6MTY1NjA1NTI2NX0.TJI_hbOuyzUATz-mhVUi1dGC_KM2uQ1_lIgQ8HnUEss",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{base}}/auth/2fa_verify?verifyCode=111111",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"auth",
+								"2fa_verify"
+							],
+							"query": [
+								{
+									"key": "verifyCode",
+									"value": "111111"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "UserCreate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"test@email.com\",\n    \"name\":\"name\",\n    \"password\":\"testpwd\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base}}/user/create?method=email",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"user",
+								"create"
+							],
+							"query": [
+								{
+									"key": "method",
+									"value": "email"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UserGet",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base}}/user/get?userId=q9ns-enwr-8mxt-lumu",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"user",
+								"get"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "q9ns-enwr-8mxt-lumu"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UserEnable2FA",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"phone\":\"0912345678\",\n    \"verifyCode\":\"111111\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base}}/user/2fa_enable",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"user",
+								"2fa_enable"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "VerifySms",
+			"item": [
+				{
+					"name": "VerifySmsSend",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InE5bnMtZW53ci04bXh0LWx1bXUiLCJuYW1lIjoibmFtZSIsInR5cGUiOjEsImFsbG93IjpbIkdFVDovYXV0aC8yZmFfdmVyaWZ5IiwiR0VUOi92ZXJpZnlzbXMvc2VuZD9waG9uZT0wOTEyMzQ1Njc4Il0sInJvbGUiOjEsImZsYWciOjEsInN0YXR1cyI6MSwibm9uY2UiOiJTM3FEQmszQ3hyVEt1eDhtRmR6M0tpTnQiLCJpYXQiOjE2NTYwNTQ5NjUsImV4cCI6MTY1NjA1NTI2NX0.TJI_hbOuyzUATz-mhVUi1dGC_KM2uQ1_lIgQ8HnUEss",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base}}/verifysms/send?phone=0912345678",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"verifysms",
+								"send"
+							],
+							"query": [
+								{
+									"key": "phone",
+									"value": "0912345678"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "System",
+			"item": [
+				{
+					"name": "SystemStatus",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base}}/system/status",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"system",
+								"status"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Query",
+			"item": [
+				{
+					"name": "Query",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"query\": \"user\",\n    \"where\":[{\n        \"left\":\"user.id\",\n        \"op\":\"=\",\n        \"right\":0\n    }]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base}}/query",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"query"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "QueryCount",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base}}/query/count",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"query",
+								"count"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "QuerySum",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base}}/query/sum",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"query",
+								"sum"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "QueryRaw",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"sql\": \"SELECT * FROM user\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base}}/query/raw",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"query",
+								"raw"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

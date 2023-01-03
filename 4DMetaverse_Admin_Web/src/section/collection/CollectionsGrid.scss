@@ -1,0 +1,10 @@
+@import '../../colors';
+
+.collections-grid {
+    padding: 16px 0px;
+
+    .collection-search {
+        border-top: 1px solid $border-color;
+        border-bottom: 1px solid $border-color;
+    }
+}

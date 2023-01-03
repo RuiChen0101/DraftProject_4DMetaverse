@@ -1,0 +1,13 @@
+# 4DMetaverse_Function
+
+## Env
+
+```
+ENV=local
+REDIS_DSN=redis://127.0.0.1:6379
+MAIN_DB=http://127.0.0.1:9999
+USER_DB=http://127.0.0.1:9998
+STORAGE_SERVICE=http://127.0.0.1:9997
+QUERY_SERVICE=http://127.0.0.1:9990
+JWT_SECRET=123456
+```

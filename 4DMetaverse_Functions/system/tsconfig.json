@@ -1,0 +1,29 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "noImplicitReturns": true,
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "noUnusedLocals": true,
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
+        "outDir": "lib",
+        "sourceMap": false,
+        "strict": true,
+        "target": "es2017",
+        "lib": [
+            "ES2021.String"
+        ]
+    },
+    "ts-node": {
+        "files": true
+    },
+    "compileOnSave": true,
+    "include": [
+        "./",
+        "src/**/*.ts"
+    ],
+    "files": [
+        "src/types.d.ts"
+    ]
+}

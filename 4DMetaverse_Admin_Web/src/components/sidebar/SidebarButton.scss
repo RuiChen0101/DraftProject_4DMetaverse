@@ -1,0 +1,24 @@
+@import '../../colors';
+
+.sidebar-button {
+    display: flex;
+    width: 100%;
+    text-align: left;
+
+    a {
+        width: 100%;
+        padding: 1rem;
+        text-decoration: none;
+        color: $black-30;
+        background-color: transparent;
+
+        &.active {
+            background-color: #6096D44d;
+            border-right: 10px solid $primary-color;
+        }
+
+        &:hover {
+            color: #fff;
+        }
+    }
+}

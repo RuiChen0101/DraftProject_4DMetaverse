@@ -1,0 +1,24 @@
+@import '../../colors';
+
+.filter-item-pill {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 16px;
+    background-color: rgba(0, 0, 0, 0.06);
+    border-radius: 50px;
+
+    span {
+        font-size: 14px;
+    }
+
+    .btn {
+        padding: 0px;
+        color: $black-50;
+        border-radius: 50px;
+
+        &:hover {
+            color: $black-70;
+        }
+    }
+}

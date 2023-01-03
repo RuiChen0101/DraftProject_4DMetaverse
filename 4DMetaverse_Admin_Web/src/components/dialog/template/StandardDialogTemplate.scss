@@ -1,0 +1,9 @@
+@import '../../../colors';
+
+.standard-dialog-template {
+    max-width: 500px;
+
+    .standard-dialog-template-error {
+        color: $error-color;
+    }
+}

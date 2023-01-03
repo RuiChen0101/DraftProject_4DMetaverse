@@ -1,0 +1,86 @@
+{
+  "name": "4dmetaverse_admin_sdk",
+  "version": "0.1.0",
+  "description": "admin backend sdk for 4dmetaverse",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "files": [
+    "lib/"
+  ],
+  "scripts": {
+    "build": "tsc --build --clean && tsc && npm run build:esm",
+    "build:esm": "tsc --module esnext --target esnext --declaration false --outDir ./lib/esm",
+    "test": "mocha -r mock-local-storage 'test/**/*.test.ts' --exit --recursive",
+    "test-coverage": "nyc --reporter=text mocha -r mock-local-storage 'test/**/*.test.ts' --exit --recursive"
+  },
+  "typesVersions": {
+    "*": {
+      "app": [
+        "lib/app"
+      ],
+      "auth": [
+        "lib/auth"
+      ],
+      "collection": [
+        "lib/collection"
+      ],
+      "database": [
+        "lib/database"
+      ],
+      "storage": [
+        "lib/storage"
+      ],
+      "user": [
+        "lib/user"
+      ]
+    }
+  },
+  "exports": {
+    ".": "./lib/index.js",
+    "./app": {
+      "types": "./lib/app/index.d.ts",
+      "require": "./lib/app/index.js",
+      "import": "./lib/esm/app/index.js"
+    },
+    "./auth": {
+      "types": "./lib/auth/index.d.ts",
+      "require": "./lib/auth/index.js",
+      "import": "./lib/esm/auth/index.js"
+    },
+    "./collection": {
+      "types": "./lib/collection/index.d.ts",
+      "require": "./lib/collection/index.js",
+      "import": "./lib/esm/collection/index.js"
+    },
+    "./database": {
+      "types": "./lib/database/index.d.ts",
+      "require": "./lib/database/index.js",
+      "import": "./lib/esm/database/index.js"
+    },
+    "./storage": {
+      "types": "./lib/storage/index.d.ts",
+      "require": "./lib/storage/index.js",
+      "import": "./lib/esm/storage/index.js"
+    },
+    "./user": {
+      "types": "./lib/user/index.d.ts",
+      "require": "./lib/user/index.js",
+      "import": "./lib/esm/user/index.js"
+    }
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "js-base64": "^3.7.2"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.3.3",
+    "@types/mocha": "^9.1.1",
+    "chai": "^4.3.6",
+    "mocha": "^10.0.0",
+    "mock-local-storage": "^1.1.23",
+    "nyc": "^15.1.0",
+    "ts-mockito": "^2.6.1",
+    "ts-node": "^10.9.1"
+  }
+}

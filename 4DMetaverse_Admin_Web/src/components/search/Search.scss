@@ -1,0 +1,33 @@
+@import '../../colors';
+
+.search {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+    padding: 4px 12px;
+
+    .dropdown-item:active {
+        background-color: $primary-color-light;
+        color: #000;
+    }
+
+    .search-button {
+        color: $black-50;
+    }
+
+    .search-filter-text {
+        color: $black-50;
+        font-weight: 300;
+        pointer-events: none;
+        user-select: none;
+    }
+
+    .search-clear.btn {
+        color: $black-50;
+
+        &:hover {
+            color: $black-70;
+        }
+    }
+}

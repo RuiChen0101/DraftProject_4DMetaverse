@@ -1,0 +1,26 @@
+{
+    "functions": [
+        {
+            "source": "user",
+            "codebase": "user"
+        },
+        {
+            "source": "collection",
+            "codebase": "collection"
+        },
+        {
+            "source": "system",
+            "codebase": "system"
+        }
+    ],
+    "emulators": {
+        "functions": {
+            "port": 5001,
+            "host": "0.0.0.0"
+        },
+        "ui": {
+            "port": 4001,
+            "host": "0.0.0.0"
+        }
+    }
+}

@@ -1,0 +1,12 @@
+@import '../../colors';
+
+.confirm-dialog {
+    .confirm-dialog-body {
+        text-align: left;
+        font-size: 16px;
+    }
+
+    .confirm-dialog-error {
+        color: $error-color;
+    }
+}

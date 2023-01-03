@@ -1,0 +1,10 @@
+@import '../../colors';
+
+.wrapped-datetime-cell {
+    display: inline-block;
+
+    .time {
+        font-size: 12px;
+        color: $black-70;
+    }
+}

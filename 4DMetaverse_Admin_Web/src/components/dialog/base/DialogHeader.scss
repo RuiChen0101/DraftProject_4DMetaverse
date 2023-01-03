@@ -1,0 +1,27 @@
+@import '../../../colors';
+
+.dialog-header {
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #dee2e6;
+
+    .dialog-header-title {
+        margin: 0px;
+        line-height: 1.5;
+        font-weight: 500;
+    }
+
+    .dialog-header-close {
+        margin-left: auto;
+        color: $black-50  !important;
+
+        &:hover {
+            color: $black-70  !important;
+        }
+
+        &:focus {
+            box-shadow: 0 0 0 0.25rem rgb(114 114 118 / 25%);
+        }
+    }
+}

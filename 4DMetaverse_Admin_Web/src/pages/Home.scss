@@ -1,0 +1,9 @@
+.home-main {
+    overflow: hidden;
+
+    .wrapper {
+        max-height: 100vh;
+        flex: 1 1 auto;
+        overflow-y: auto;
+    }
+}

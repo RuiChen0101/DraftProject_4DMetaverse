@@ -1,0 +1,122 @@
+image: golang:latest
+
+stages:
+  - test
+  - deploy
+
+variables:
+  RULES_CHANGES_PATH: "**/*"
+
+.base-rules:
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+      when: always
+    - if: '$CI_PIPELINE_SOURCE == "push"'
+      when: never
+    - if: $CI_COMMIT_TAG
+      when: never
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+      changes:
+        - $RULES_CHANGES_PATH
+
+.build-base:
+  image: docker:20.10.12
+  services:
+    - name: docker:20.10.12-dind
+  allow_failure: true
+
+.main-db:
+  extends: .base-rules
+  variables:
+    RULES_CHANGES_PATH: "4DMetaverse_Main_Db/**/*"
+  before_script:
+    - cd 4DMetaverse_Main_Db
+  
+.user-db:
+  extends: .base-rules
+  variables:
+    RULES_CHANGES_PATH: "4DMetaverse_User_Db/**/*"
+  before_script:
+    - cd 4DMetaverse_User_Db
+
+.storage-service:
+  extends: .base-rules
+  variables:
+    RULES_CHANGES_PATH: "4DMetaverse_Storage_Service/**/*"
+  before_script:
+    - cd 4DMetaverse_Storage_Service
+
+.query-service:
+  extends: .base-rules
+  variables:
+    RULES_CHANGES_PATH: "4DMetaverse_Query_Service/**/*"
+  before_script:
+    - cd 4DMetaverse_Query_Service
+
+main-db-test:
+  stage: test
+  extends: .main-db
+  needs: []
+  script:
+    - go test ./...
+
+user-db-test:
+  stage: test
+  extends: .user-db
+  needs: []
+  script:
+    - go test ./...
+
+storage-service-test:
+  stage: test
+  extends: .storage-service
+  needs: []
+  script:
+    - go test ./...
+
+query-service-test:
+  stage: test
+  extends: .query-service
+  needs: []
+  script:
+    - go test ./...
+
+main-db-deploy:
+  stage: deploy
+  extends: 
+    - .main-db
+    - .build-base
+  needs: ["main-db-test"]
+  script:
+    - docker build -t 127.0.0.1:5000/4dmetaverse_main_db .
+    - docker push 127.0.0.1:5000/4dmetaverse_main_db
+
+user-db-deploy:
+  stage: deploy
+  extends: 
+    - .user-db
+    - .build-base
+  needs: ["user-db-test"]
+  script:
+    - docker build -t 127.0.0.1:5000/4dmetaverse_user_db .
+    - docker push 127.0.0.1:5000/4dmetaverse_user_db
+
+storage-service-deploy:
+  stage: deploy
+  extends: 
+    - .storage-service
+    - .build-base
+  needs: ["storage-service-test"]
+  script:
+    - docker build -t 127.0.0.1:5000/4dmetaverse_storage_service .
+    - docker push 127.0.0.1:5000/4dmetaverse_storage_service
+
+query-service-deploy:
+  stage: deploy
+  extends: 
+    - .query-service
+    - .build-base
+  needs: ["query-service-test"]
+  script:
+    - docker build -t 127.0.0.1:5000/4dmetaverse_query_service .
+    - docker push 192.168.68.167:5000/4dmetaverse_query_service

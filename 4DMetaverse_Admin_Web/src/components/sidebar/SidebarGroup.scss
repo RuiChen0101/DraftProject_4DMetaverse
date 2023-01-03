@@ -1,0 +1,26 @@
+@import '../../colors';
+
+.sidebar-group {
+    width: 100%;
+
+    .sidebar-group-title {
+        display: flex;
+        padding: 0px 1rem;
+        justify-content: space-between;
+        align-items: center;
+        color: $black-30;
+
+        .collapse-button {
+            color: $black-30;
+        }
+    }
+
+    .ReactCollapse--collapse {
+        transition: height 500ms;
+
+        .ReactCollapse--content {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}

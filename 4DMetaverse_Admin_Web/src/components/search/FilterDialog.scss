@@ -1,0 +1,36 @@
+@import '../../colors';
+
+.filter-dialog {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-left: 52px;
+    position: absolute;
+    z-index: 99;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px $border-color;
+    border-radius: 10px;
+
+    .filter-dialog-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding: 8px 12px 8px 16px;
+        border-bottom: 1px solid $border-color;
+
+        .btn {
+            color: $black-50;
+        }
+    }
+
+    .filter-dialog-body {
+        padding: 8px 12px;
+    }
+
+    .filter-dialog-footer {
+        display: flex;
+        width: 100%;
+        padding: 8px 16px;
+    }
+}

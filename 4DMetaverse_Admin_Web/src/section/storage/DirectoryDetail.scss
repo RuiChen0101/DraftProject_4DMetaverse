@@ -1,0 +1,43 @@
+@import '../../colors';
+
+.directory-detail {
+    width: 100%;
+
+    .directory-detail-header {
+        width: 100%;
+        color: $black-70  !important;
+
+        p {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .directory-delete {
+            color: $black-50  !important;
+
+            &:hover {
+                color: $black-70  !important;
+            }
+
+            &:focus {
+                box-shadow: 0 0 0 0.25rem rgb(114 114 118 / 25%);
+            }
+        }
+    }
+
+    .directory-detail-info {
+        padding: 0px 12px;
+        text-align: left;
+        word-wrap: break-word;
+        font-size: 14px;
+
+        .directory-detail-info-headline {
+            color: $black-50;
+        }
+
+        p {
+            margin: 0px;
+        }
+    }
+}

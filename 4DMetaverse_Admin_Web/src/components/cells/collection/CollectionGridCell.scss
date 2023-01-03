@@ -1,0 +1,49 @@
+@import '../../../colors';
+
+.collection-grid-cell {
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px 3px $black-10;
+    background-color: #ffffff;
+
+    &:hover {
+        cursor: pointer;
+        background-color: #00000008;
+    }
+
+    img {
+        width: 100%;
+        max-height: 100px;
+        object-fit: cover;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    .collection-grid-cell-body {
+        text-align: start;
+        padding: 12px 8px;
+
+        h5 {
+            max-width: 95%;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        .collection-grid-cell-tag {
+            padding: 4px 12px;
+            border-radius: 5px;
+            background-color: $primary-color;
+            color: #fff;
+            font-size: 14px;
+        }
+
+        .collection-grid-cell-data {
+            font-size: 12px;
+            color: $black-70;
+
+            svg {
+                color: $black-50;
+            }
+        }
+    }
+}

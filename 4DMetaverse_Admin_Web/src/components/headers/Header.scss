@@ -1,0 +1,24 @@
+@import '../../colors';
+
+.header {
+    position: fixed;
+    top: 0;
+    display: flex;
+    width: 100vw;
+    background-color: $default-background-color;
+    padding: 8px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    border-bottom: 1px solid $border-color;
+
+    span {
+        font-size: 24px;
+        font-weight: 700;
+    }
+
+    img {
+        margin-right: 8px;
+        height: 32px;
+    }
+}

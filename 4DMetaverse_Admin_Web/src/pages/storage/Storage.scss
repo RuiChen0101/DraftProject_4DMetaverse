@@ -1,0 +1,50 @@
+@import '.././../colors';
+
+.storage {
+    width: 100%;
+    padding: 32px 40px;
+
+    h1 {
+        text-align: left;
+    }
+
+    .storage-area {
+        background-color: #fff;
+        border-radius: 10px;
+
+        .storage-current-path {
+            display: flex;
+            align-items: center;
+            padding-left: .5rem;
+            color: $black-70;
+        }
+
+        .storage-header {
+            width: 100%;
+            display: flex;
+            padding: 16px 0px 12px 0px;
+            border-bottom: 1px solid $black-30;
+
+            .storage-current-path {
+                width: 85%;
+
+                p {
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                }
+            }
+        }
+
+        .storage-body {
+            .storage-file-list {
+                padding: 0px;
+                border-right: 1px solid $black-30;
+            }
+
+            .storage-file-detail {
+                padding: 15px .5rem;
+            }
+        }
+    }
+}

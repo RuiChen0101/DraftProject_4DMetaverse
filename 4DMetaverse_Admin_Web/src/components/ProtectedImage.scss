@@ -1,0 +1,14 @@
+@import '../colors';
+
+.protected-image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    color: $black-70;
+
+    img {
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "name": "4dmetaverse_functions",
+    "version": "0.1.0",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "build": "node --experimental-json-modules cmd.js build",
+        "install": "node --experimental-json-modules cmd.js subinstall",
+        "ci": "node --experimental-json-modules cmd.js subci",
+        "copy": "node --experimental-json-modules cmd.js copy-share",
+        "test": "mocha --exit --recursive",
+        "serve": "npm run build && firebase emulators:start --only functions",
+        "shell": "npm run build && firebase functions:shell",
+        "start": "npm run shell",
+        "deploy": "npm run build && firebase deploy --only functions",
+        "logs": "firebase functions:log"
+    },
+    "dependencies": {
+        "child_process": "^1.0.2"
+    }
+}
